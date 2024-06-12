@@ -1,11 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Função para criar um popup
     function createPopup(message, onYes, onNo) {
-        // Cria o overlay do popup
         const overlay = document.createElement("div");
         overlay.className = "popup-overlay";
 
-        // Cria o conteúdo do popup
         const popup = document.createElement("div");
         popup.className = "popup";
         popup.innerHTML = `
@@ -21,7 +18,6 @@ document.addEventListener("DOMContentLoaded", function () {
         overlay.appendChild(popup);
         document.body.appendChild(overlay);
 
-        // Adiciona eventos aos botões
         document.querySelector(".yes-button").addEventListener("click", function () {
             onYes();
             document.body.removeChild(overlay);
@@ -33,14 +29,11 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Cria o popup inicial
     createPopup(
         "Aceita ser o meu amor pelo resto da vida?",
         function () {
-            // Continua a página normalmente
         },
         function () {
-            // Redireciona para a página com gatinhos chorando
             window.location.href = "gatinhos.html";
         }
     );
